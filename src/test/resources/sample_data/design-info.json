@@ -1,0 +1,10 @@
+{
+  "sampleData": {
+    "76333d88-b11d-4171-bfd6-7cb48e64977a": {
+      "attributes": "sample_data/HttpRequestAttributes.dwl"
+    },
+    "bb25debf-54a2-4a30-a670-346939c8a667": {
+      "payload": "sample_data/list_defaultstringtype.dwl"
+    }
+  }
+}
