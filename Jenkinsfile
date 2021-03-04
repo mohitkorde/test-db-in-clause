@@ -12,9 +12,11 @@ echo ‘Application in Testing Phase…’
 mvn test
 }
 }
-stage(‘Deploy CloudHub’) {
+stage(‘Deploy Development’) {
 environment {
+ENVIRONMENT = 'Sandbox'
 ANYPOINT_CREDENTIALS = credentials(‘deploy-anypoint-user’)
+APP_NAME = 'sandbox-test-db-in-clause-MK'
 }
 steps {
 echo ‘Deploying mule project due to the latest code commit…’
