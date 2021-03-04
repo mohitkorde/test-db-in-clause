@@ -24,7 +24,7 @@ WORKER = 'Micro'
 steps {
 echo ‘Deploying mule project due to the latest code commit…’
 echo ‘Deploying to the configured environment….’
-mvn deploy -Dusername=${ANYPOINT_CREDENTIALS_USR} -Dpassword=${ANYPOINT_CREDENTIALS_PSW} -Dworkers=1
+mvn deploy
 }
 }
 }
