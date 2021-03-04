@@ -31,14 +31,15 @@
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>${mule.version}</muleVersion>
 						<!-- Deploy User Parameter -->
-						<username>${anypoint.username}</username>
-						<password>${anypoint.password}</password>
-						
+						<username>${username}</username>
+						<password>${password}</password>
+						<applicationName>${project.artifactId}</applicationName>
 						<!-- Environment Parameter -->
-						<environment>${cloudhub.environment}</environment>
+						<environment>Sandbox</environment>
 						<applicationName>${cloudhub.app}</applicationName>
 						<businessGroup>${cloudhub.bg}</businessGroup>
-						<workerType>${cloudhub.worker}</workerType>
+						<workerType>${workerType}</workerType>
+						<workers>1</workers>
 					</cloudHubDeployment>
 					<sharedLibraries>
 						<sharedLibrary>
