@@ -4,9 +4,10 @@ pipeline {
   environment {
     //adding a comment for the commit test
     DEPLOY_CREDS = credentials('deploy-anypoint-user')
-    MULE_VERSION = '4.1.4'
-    BG = "BitsInGlass"
-    WORKER = "Micro"
+    APP_Name = 'Sandbox'
+    MULE_VERSION = '4.1.3'
+    BG = 'BitsInGlass'
+    WORKER = 'Micro'
   }
   stages {
     stage('Build') {
