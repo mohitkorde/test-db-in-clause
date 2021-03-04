@@ -12,7 +12,7 @@ echo ‘Application in Testing Phase…’
 mvn test
 }
 }
-stage(‘Deploy Development’) {
+stage(‘Deploy Sandbox’) {
 environment {
 ENVIRONMENT = 'Sandbox'
 ANYPOINT_CREDENTIALS = credentials(‘deploy-anypoint-user’)
