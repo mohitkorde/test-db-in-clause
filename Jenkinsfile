@@ -24,7 +24,6 @@ WORKER = 'Micro'
 steps {
 echo ‘Deploying mule project due to the latest code commit…’
 echo ‘Deploying to the configured environment….’
-#mvn deploy -DmuleDeploy -Dmule.version="4.1.4" -Danypoint.username="ANYPOINT_CREDENTIALS_USR" -Danypoint.password="ANYPOINT_CREDENTIALS_PSW" -Dcloudhub.app="APP_NAME" -Dcloudhub.environment="ENVIRONMENT" -Dcloudhub.bg="BG" -DworkerType="WORKER" -Dcloudhub.worker=1
 mvn package deploy -DmuleDeploy -Dusername=mkorde21 -Dpassword=Mumbai10 -DworkerType=Micro -Dworkers=1
 }
 }
