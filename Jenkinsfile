@@ -34,7 +34,7 @@ APP_NAME = 'sandbox-test-db-in-clause-MK'
 WORKER = 'Micro'
 }
 steps {
-sh "mvn deploy -DmuleDeploy -Dusername=${ANYPOINT_CREDENTIALS_USR} -Dpassword=${ANYPOINT_CREDENTIALS_PSW} -DworkerType=Micro -Dworkers=1"
+sh "mvn deploy -DmuleDeploy -Dmule.version="%MULE_VERSION%" -Dusername=${ANYPOINT_CREDENTIALS_USR} -Dpassword=${ANYPOINT_CREDENTIALS_PSW} -Dcloudhub.environment="%ENVIRONMENT%" -Dcloudhub.bg="%BG%" -DworkerType=Micro -Dworkers=1"
 }
 }
 }
