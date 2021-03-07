@@ -39,6 +39,7 @@ payload map {"arg$$" : $} reduce ((item, accumulator = {}) -> item ++ accumulato
 			<db:sql><![CDATA[#['SELECT * FROM TEST WHERE NAME IN( $(vars.inClause) )']]]></db:sql>
 			<db:input-parameters><![CDATA[#[vars.inputParameters]]]></db:input-parameters>
 		</db:select>
+		<logger level="INFO" doc:name="Logger" doc:id="3e4a55a0-5430-46b1-a48c-05aa9089555f" message='"Hello from the Mule Workshop!"'/>
 		<ee:transform doc:name="Transform Message" doc:id="fa970ecc-fe9d-49df-a965-604dbe5fd52e" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0

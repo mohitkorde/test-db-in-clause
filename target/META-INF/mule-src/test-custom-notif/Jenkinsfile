@@ -1,47 +1,41 @@
 pipeline {
+agent any
 
-  agent any
-  environment {
-    //adding a comment for the commit test
-    DEPLOY_CREDS = credentials('deploy-anypoint-user')
-    MULE_VERSION = '4.1.4'
-    BG = "BitsInGlass"
-    WORKER = "Micro"
-  }
-  stages {
-    stage('Build') {
-      steps {
-            ./sh mvn -B -U -e -V clean -DskipTests package
-      }
+tools { 
+        maven 'Maven 3.3.9' 
+        jdk 'jdk8' 
     }
-
-    stage('Test') {
-      steps {
-          ./sh mvn test
-      }
-    }
-
-     stage('Deploy Development') {
-      environment {
-        ENVIRONMENT = 'Sandbox'
-        APP_NAME = 'sandbox-test-db-in-clause-MK'
-      }
-      steps {
-           ./sh  mvn -U -V -e -B -DskipTests deploy -DmuleDeploy -Dmule.version="%MULE_VERSION%" -Danypoint.username="%DEPLOY_CREDS_USR%" -Danypoint.password="%DEPLOY_CREDS_PSW%" -Dcloudhub.app="%APP_NAME%" -Dcloudhub.environment="%ENVIRONMENT%" -Dcloudhub.bg="%BG%" -Dcloudhub.worker="%WORKER%"
-      }
-    }
-    stage('Deploy Production') {
-      environment {
-        ENVIRONMENT = 'Production'
-        APP_NAME = 'prod-test-db-in-clause-MK'
-      }
-      steps {
-            ./sh mvn -U -V -e -B -DskipTests deploy -DmuleDeploy -Dmule.version="%MULE_VERSION%" -Danypoint.username="%DEPLOY_CREDS_USR%" -Danypoint.password="%DEPLOY_CREDS_PSW%" -Dcloudhub.app="%APP_NAME%" -Dcloudhub.environment="%ENVIRONMENT%" -Dcloudhub.bg="%BG%" -Dcloudhub.worker="%WORKER%"
-      }
-    }
-  }
-
-  tools {
-    maven 'M3'
-  }
+    stages {
+        stage ('Initialize') {
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                ''' 
+            }
+        }
+stage(‘Build’) {
+steps {
+sh "mvn clean install"
+}
+}
+stage(‘Test’) {
+steps {
+sh "mvn test"
+}
+}
+stage(‘Deploy’) {
+environment {
+ENVIRONMENT = 'Sandbox'
+MULE_VERSION = '4.1.3'
+BG = 'BitsInGlass'
+ANYPOINT_CREDENTIALS = credentials("deploy-anypoint-user")
+APP_NAME = 'sandbox-test-db-in-clause-MK'
+WORKER = 'Micro'
+}
+steps {
+sh "mvn deploy -DmuleDeploy -Dmule.version=4.3.0 -Dusername=mkorde21 -Dpassword=Archit1127 -Dcloudhub.environment=Sandbox -Dcloudhub.bg=BitsInGlass -DworkerType=Micro -Dworkers=1"
+}
+}
+}
 }
