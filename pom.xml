@@ -30,6 +30,7 @@
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>${mule.version}</muleVersion>
+						<objectStoreV2>true</objectStoreV2>
 						<!-- Deploy User Parameter -->
 						<username>${username}</username>
 						<password>${password}</password>
