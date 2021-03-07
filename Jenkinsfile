@@ -27,7 +27,7 @@ sh "mvn test"
 stage(‘Deploy’) {
 environment {
 ENVIRONMENT = 'Sandbox'
-MULE_VERSION = '4.1.4'
+MULE_VERSION = '4.3.0'
 BG = 'BitsInGlass'
 ANYPOINT_CREDENTIALS = credentials("deploy-anypoint-user")
 APP_NAME = 'sandbox-test-db-in-clause-MK'
