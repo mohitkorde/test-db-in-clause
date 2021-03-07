@@ -3,12 +3,12 @@ agent any
 stages {
 stage(‘Build’) {
 steps {
-sh 'mvn clean install'
+sh "mvn clean install"
 }
 }
 stage(‘Test’) {
 steps {
-sh 'mvn test'
+sh "mvn test"
 }
 }
 stage(‘Deploy’) {
@@ -21,7 +21,7 @@ APP_NAME = 'sandbox-test-db-in-clause-MK'
 WORKER = 'Micro'
 }
 steps {
-sh 'mvn deploy -DmuleDeploy -Dusername=${ANYPOINT_CREDENTIALS_USR} -Dpassword=${ANYPOINT_CREDENTIALS_PSW} -DworkerType=Micro -Dworkers=1'
+sh "mvn deploy -DmuleDeploy -Dusername=${ANYPOINT_CREDENT IALS_USR} -Dpassword=${ANYPOINT_CREDENTIALS_PSW} -DworkerType=Micro -Dworkers=1"
 }
 }
 }
