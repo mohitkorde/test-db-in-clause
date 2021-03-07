@@ -3,13 +3,13 @@ agent any
 stages {
 stage(‘Build’) {
 steps {
-mvn clean install
+sh 'mvn clean install'
 }
 }
 stage(‘Test’) {
 steps {
 echo ‘Application in Testing Phase…’
-mvn test
+sh 'mvn test'
 }
 }
 stage(‘Deploy’) {
@@ -24,7 +24,7 @@ WORKER = 'Micro'
 steps {
 echo ‘Deploying mule project due to the latest code commit…’
 echo ‘Deploying to the configured environment….’
-mvn deploy
+sh 'mvn deploy -DmuleDeploy -Dusername=${ANYPOINT_CREDENTIALS_USR} -Dpassword=${ANYPOINT_CREDENTIALS_PSW} -DworkerType=Micro -Dworkers=1'
 }
 }
 }
