@@ -16,7 +16,7 @@ environment {
 ENVIRONMENT = 'Sandbox'
 MULE_VERSION = '4.1.4'
 BG = 'BitsInGlass'
-ANYPOINT_CREDENTIALS = credentials(‘deploy-anypoint-user’)
+ANYPOINT_CREDENTIALS = credentials("deploy-anypoint-user")
 APP_NAME = 'sandbox-test-db-in-clause-MK'
 WORKER = 'Micro'
 }
