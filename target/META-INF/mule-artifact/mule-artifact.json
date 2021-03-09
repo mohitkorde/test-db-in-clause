@@ -14,6 +14,7 @@
       "exportedResources": [
         "log4j2.xml",
         "application-types.xml",
+        "secret-file-id",
         "test-custom-notif.xml"
       ]
     }
