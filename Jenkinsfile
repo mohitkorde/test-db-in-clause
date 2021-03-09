@@ -29,7 +29,7 @@ environment {
 ENVIRONMENT = 'Sandbox'
 MULE_VERSION = '4.1.3'
 BG = 'BitsInGlass'
-ANYPOINT_CREDENTIALS = credentials("deploy-anypoint-user")
+ANYPOINT_CREDENTIALS = credentials('deploy-anypoint-user')
 APP_NAME = 'sandbox-test-db-in-clause-MK'
 WORKER = 'Micro'
 CLOUDHUB_ENV = credentials('CLOUDHUB_ENV_SANDBOX')
@@ -37,7 +37,7 @@ ANYPOINT_USERNAME_DEV = credentials('ANYPOINT_USERNAME_DEV')
 ANYPOINT_PASSWORD_DEV = credentials('ANYPOINT_PASSWORD_DEV')
 }
 steps {
-sh "mvn deploy -DmuleDeploy -Dmule.version=4.3.0 -Dusername=\"${ANYPOINT_USERNAME_DEV}\" -Dpassword=\"${ANYPOINT_PASSWORD_DEV}\" -Dcloudhub.environment=Sandbox -Dcloudhub.bg=BitsInGlass -DworkerType=Micro -Dworkers=1"
+sh 'mvn deploy -DmuleDeploy -Dmule.version=4.3.0 -Dusername=\"${ANYPOINT_USERNAME_DEV}\" -Dpassword=\"${ANYPOINT_PASSWORD_DEV}\" -Dcloudhub.environment=Sandbox -Dcloudhub.bg=BitsInGlass -DworkerType=Micro -Dworkers=1'
 }
 }
 }
