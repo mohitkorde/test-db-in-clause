@@ -42,9 +42,7 @@ sh '''
    echo "ANYPOINT_USERNAME = $ANYPOINT_USERNAME"
    echo "ANYPOINT_PASSWORD = $ANYPOINT_PASSWORD"
 '''
-sh '''
-"mvn deploy -DmuleDeploy -Dmule.version=4.3.0 -Danypoint.username=$ANYPOINT_USERNAME -Danypoint.password=$ANYPOINT_PASSWORD -Dcloudhub.environment=${ENVIRONMENT} -Dcloudhub.bg=${BG} -Dcloudhub.worker=${WORKER} -Dworkers=1"
-'''
+sh "mvn deploy -DmuleDeploy -Dmule.version=4.3.0 -Danypoint.username=mkorde21 -Danypoint.password=Archit1127 -Dcloudhub.environment=${ENVIRONMENT} -Dcloudhub.bg=${BG} -Dcloudhub.worker=${WORKER} -Dworkers=1"
 }
 }
 }
