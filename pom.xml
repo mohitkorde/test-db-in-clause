@@ -32,14 +32,14 @@
 						<muleVersion>${mule.version}</muleVersion>
 						<objectStoreV2>true</objectStoreV2>
 						<!-- Deploy User Parameter -->
-						<username>${username}</username>
-						<password>${password}</password>
+						<username>${anypoint.username}</username>
+						<password>${anypoint.password}</password>
 						<applicationName>${project.artifactId}</applicationName>
 						<!-- Environment Parameter -->
-						<environment>Sandbox</environment>
+						<environment>${cloudhub.environment}</environment>
 						<applicationName>${cloudhub.app}</applicationName>
 						<businessGroup>${cloudhub.bg}</businessGroup>
-						<workerType>${workerType}</workerType>
+						<workerType>${cloudhub.worker}</workerType>
 						<workers>1</workers>
 					</cloudHubDeployment>
 					<sharedLibraries>

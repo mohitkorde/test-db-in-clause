@@ -29,12 +29,15 @@ environment {
 ENVIRONMENT = 'Sandbox'
 MULE_VERSION = '4.1.3'
 BG = 'BitsInGlass'
-ANYPOINT_CREDENTIALS = credentials("deploy-anypoint-user")
+DEPLOY_CREDS = credentials("deploy-anypoint-user")
 APP_NAME = 'sandbox-test-db-in-clause-MK'
 WORKER = 'Micro'
 }
 steps {
-sh "mvn deploy -DmuleDeploy -Dmule.version=4.3.0 -Dusername=mkorde21 -Dpassword=Archit1127 -Dcloudhub.environment=Sandbox -Dcloudhub.bg=BitsInGlass -DworkerType=Micro -Dworkers=1"
+sh '''
+   echo "DEPLOY_CREDS_USR = ${DEPLOY_CREDS_USR}"
+'''
+sh "mvn deploy -DmuleDeploy -Dmule.version=4.3.0 -Danypoint.username=\"%DEPLOY_CREDS_USR%\" -Dpassword=Archit1127 -Dcloudhub.environment=Sandbox -Dcloudhub.bg=BitsInGlass -DworkerType=Micro -Dworkers=1"
 }
 }
 }
