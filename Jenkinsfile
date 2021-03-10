@@ -36,12 +36,6 @@ APP_NAME = 'sandbox-test-db-in-clause-MK'
 WORKER = 'Micro'
 }
 steps {
-sh '''
-   echo "DEPLOY_CREDS_USR = %DEPLOY_CREDS_USR%"
-   echo "Environment = ${ENVIRONMENT}"
-   echo "ANYPOINT_USERNAME = $ANYPOINT_USERNAME"
-   echo "ANYPOINT_PASSWORD = $ANYPOINT_PASSWORD"
-'''
 sh "mvn deploy -DmuleDeploy -Dmule.version=4.3.0 -Danypoint.username=mkorde21 -Danypoint.password=Archit1127 -Dcloudhub.environment=${ENVIRONMENT} -Dcloudhub.bg=${BG} -Dcloudhub.worker=${WORKER} -Dworkers=1"
 }
 }
