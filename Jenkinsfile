@@ -39,11 +39,11 @@ steps {
 sh '''
    echo "DEPLOY_CREDS_USR = %DEPLOY_CREDS_USR%"
    echo "Environment = ${ENVIRONMENT}"
-   echo "ANYPOINT_USERNAME = ${ANYPOINT_USERNAME}"
-   echo "ANYPOINT_PASSWORD = ${ANYPOINT_PASSWORD}"
+   echo "ANYPOINT_USERNAME = $ANYPOINT_USERNAME"
+   echo "ANYPOINT_PASSWORD = $ANYPOINT_PASSWORD"
 '''
 sh '''
-"mvn deploy -DmuleDeploy -Dmule.version=4.3.0 -Danypoint.username=${ANYPOINT_USERNAME} -Danypoint.password=${ANYPOINT_PASSWORD} -Dcloudhub.environment=${ENVIRONMENT} -Dcloudhub.bg=${BG} -Dcloudhub.worker=${WORKER} -Dworkers=1"
+"mvn deploy -DmuleDeploy -Dmule.version=4.3.0 -Danypoint.username=$ANYPOINT_USERNAME -Danypoint.password=$ANYPOINT_PASSWORD -Dcloudhub.environment=${ENVIRONMENT} -Dcloudhub.bg=${BG} -Dcloudhub.worker=${WORKER} -Dworkers=1"
 '''
 }
 }
