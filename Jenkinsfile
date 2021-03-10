@@ -36,7 +36,9 @@ APP_NAME = 'sandbox-test-db-in-clause-MK'
 WORKER = 'Micro'
 }
 steps {
-sh "mvn deploy -DmuleDeploy -Dmule.version=4.3.0 -Danypoint.username=mkorde21 -Danypoint.password=Archit1127 -Dcloudhub.environment=${ENVIRONMENT} -Dcloudhub.bg=${BG} -Dcloudhub.worker=${WORKER} -Dworkers=1"
+    withCredentials([usernamePassword(credentialsId: 'deploy-anypoint-user', passwordVariable: 'pass', usernameVariable: 'user')]) {
+    // some block
+    sh "mvn deploy -DmuleDeploy -Dmule.version=4.3.0 -Danypoint.username=$user -Danypoint.password=$pass -Dcloudhub.environment=${ENVIRONMENT} -Dcloudhub.bg=${BG} -Dcloudhub.worker=${WORKER} -Dworkers=1"
 }
 }
 }
