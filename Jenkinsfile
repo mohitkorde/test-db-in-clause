@@ -36,6 +36,7 @@ WORKER = 'Micro'
 steps {
 sh '''
    echo "DEPLOY_CREDS_USR = ${DEPLOY_CREDS_USR}"
+   echo "Environment = ${ENVIRONMENT}"
 '''
 sh "mvn deploy -DmuleDeploy -Dmule.version=4.3.0 -Danypoint.username=\"%DEPLOY_CREDS_USR%\" -Dpassword=Archit1127 -Dcloudhub.environment=Sandbox -Dcloudhub.bg=BitsInGlass -DworkerType=Micro -Dworkers=1"
 }
