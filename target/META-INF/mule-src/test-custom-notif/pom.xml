@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.mycompany</groupId>
+	<groupId>61532f6e-7115-444d-b032-4d24b1bfaea9</groupId>
 	<artifactId>test-custom-notif</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
 
 	<name>test-db-in-clause</name>
 
-	<properties>
+	<description>sample poc project</description>
+    <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -32,14 +31,14 @@
 						<muleVersion>${mule.version}</muleVersion>
 						<objectStoreV2>true</objectStoreV2>
 						<!-- Deploy User Parameter -->
-						<username>${username}</username>
-						<password>${password}</password>
+						<username>${anypoint.username}</username>
+						<password>${anypoint.password}</password>
 						<applicationName>${project.artifactId}</applicationName>
 						<!-- Environment Parameter -->
-						<environment>Sandbox</environment>
+						<environment>${cloudhub.environment}</environment>
 						<applicationName>${cloudhub.app}</applicationName>
 						<businessGroup>${cloudhub.bg}</businessGroup>
-						<workerType>${workerType}</workerType>
+						<workerType>${cloudhub.worker}</workerType>
 						<workers>1</workers>
 					</cloudHubDeployment>
 					<sharedLibraries>
@@ -48,7 +47,7 @@
 							<artifactId>postgresql</artifactId>
 						</sharedLibrary>
 					</sharedLibraries>
-					<classifier>mule-application</classifier>
+					<classifier>mule-application-example</classifier>
 				</configuration>
 			</plugin>
 		</plugins>

@@ -32,7 +32,7 @@ BG = 'BitsInGlass'
 APP_NAME = 'sandbox-test-db-in-clause-MK'
 WORKER = 'Micro'
 }
-steps {
+steps { 
     withCredentials([usernamePassword(credentialsId: 'deploy-anypoint-user', passwordVariable: 'pass', usernameVariable: 'user')]) {
     	sh "mvn deploy -DmuleDeploy -Dmule.version=4.3.0 -Danypoint.username=$user -Danypoint.password=$pass -Dcloudhub.environment=${ENVIRONMENT} -Dcloudhub.bg=${BG} -Dcloudhub.worker=${WORKER} -Dworkers=1"
 }

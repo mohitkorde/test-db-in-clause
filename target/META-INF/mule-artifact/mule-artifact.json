@@ -4,7 +4,7 @@
   ],
   "secureProperties": [],
   "redeploymentEnabled": true,
-  "name": "com.mycompany:test-custom-notif:1.0.0-SNAPSHOT",
+  "name": "61532f6e-7115-444d-b032-4d24b1bfaea9:test-custom-notif:1.0.0",
   "minMuleVersion": "4.1.3",
   "requiredProduct": "MULE_EE",
   "classLoaderModelLoaderDescriptor": {
